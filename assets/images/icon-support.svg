@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84" role="img" aria-label="Support icon">
+  <circle cx="42" cy="42" r="40" fill="#102254" stroke="#6aa3ff"/>
+  <path d="M25 45V39C25 30 32 23 42 23C52 23 59 30 59 39V45" fill="none" stroke="#6bffcf" stroke-width="5"/>
+  <rect x="21" y="44" width="9" height="14" rx="3" fill="#6bffcf"/>
+  <rect x="54" y="44" width="9" height="14" rx="3" fill="#6bffcf"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-label="About team placeholder">
+  <defs>
+    <linearGradient id="a" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101f59"/>
+      <stop offset="100%" stop-color="#0a1235"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="620" rx="24" fill="url(#a)"/>
+  <circle cx="250" cy="230" r="85" fill="#203780"/>
+  <circle cx="430" cy="240" r="85" fill="#1f356f"/>
+  <circle cx="610" cy="228" r="85" fill="#203780"/>
+  <rect x="165" y="315" width="540" height="190" rx="18" fill="#0f1b46"/>
+  <text x="220" y="390" fill="#d9e4ff" font-size="32" font-family="Arial, sans-serif" font-weight="700">Professional Advisory Team</text>
+  <text x="220" y="430" fill="#9eb2e6" font-size="22" font-family="Arial, sans-serif">Image Placeholder</text>
+</svg>

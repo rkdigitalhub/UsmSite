@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="220" viewBox="0 0 560 220" role="img" aria-label="Service placeholder">
+  <defs>
+    <linearGradient id="sp" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#12245a"/>
+      <stop offset="100%" stop-color="#0c173d"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="220" rx="18" fill="url(#sp)"/>
+  <g stroke="#2b4b9a" stroke-width="1">
+    <path d="M0 55H560"/><path d="M0 110H560"/><path d="M0 165H560"/>
+    <path d="M140 0V220"/><path d="M280 0V220"/><path d="M420 0V220"/>
+  </g>
+  <circle cx="96" cy="110" r="34" fill="#6bffcf" opacity="0.22"/>
+  <circle cx="170" cy="110" r="24" fill="#6aa3ff" opacity="0.22"/>
+  <text x="226" y="120" fill="#dbe6ff" font-size="26" font-family="Arial, sans-serif" font-weight="700">Image Placeholder</text>
+</svg>

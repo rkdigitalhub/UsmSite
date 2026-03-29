@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Register step image">
+  <rect width="120" height="120" rx="20" fill="#102254"/>
+  <rect x="28" y="24" width="64" height="72" rx="8" fill="none" stroke="#6aa3ff" stroke-width="5"/>
+  <path d="M40 44H80M40 58H80M40 72H66" stroke="#6bffcf" stroke-width="5" stroke-linecap="round"/>
+</svg>

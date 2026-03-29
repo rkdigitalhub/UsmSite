@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Fund step image">
+  <rect width="120" height="120" rx="20" fill="#102254"/>
+  <rect x="25" y="43" width="70" height="42" rx="8" fill="none" stroke="#6aa3ff" stroke-width="5"/>
+  <circle cx="60" cy="64" r="10" fill="#6bffcf"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="56" viewBox="0 0 220 56" role="img" aria-label="Unispace Market logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#6bffcf"/>
+      <stop offset="100%" stop-color="#6aa3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="220" height="56" rx="12" fill="#0b1538"/>
+  <rect x="6" y="6" width="44" height="44" rx="10" fill="url(#g1)"/>
+  <path d="M17 32L23 18L29 27L34 21L41 38" fill="none" stroke="#041023" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="60" y="26" fill="#dce7ff" font-size="12" font-family="Arial, sans-serif" font-weight="700">UNISPACE</text>
+  <text x="60" y="40" fill="#9fb4ee" font-size="12" font-family="Arial, sans-serif">MARKET</text>
+</svg>
