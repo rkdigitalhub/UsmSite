@@ -1,7 +1,4 @@
 :root {
-  --bg: #060504;
-  --bg-soft: #18120a;
-  --panel: rgba(24, 17, 9, 0.78);
   --panel-gradient: linear-gradient(180deg, rgba(23, 36, 72, 0.9), rgba(15, 25, 53, 0.92));
   --panel-border: rgba(153, 177, 227, 0.38);
   --panel-shadow: 0 0 0 1px rgba(153, 177, 227, 0.14), 0 18px 56px rgba(4, 12, 33, 0.42);
@@ -26,9 +23,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.section[id],
+.site-footer[id] {
+  scroll-margin-top: 92px;
+}
+
 body {
   margin: 0;
-  font-family: "Manrope", sans-serif;
+  font-family: "DM Sans", sans-serif;
   background: rgb(4, 8, 23);
   color: var(--text);
   line-height: 1.6;
@@ -41,7 +43,7 @@ h3,
 h4 {
   margin: 0 0 0.6rem;
   line-height: 1.2;
-  font-family: "Sora", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 p {
@@ -84,12 +86,12 @@ p {
 .brand {
   color: var(--text);
   text-decoration: none;
-  font-family: "Sora", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 .brand img {
-  width: 290px;
+  width: 145px;
   max-width: 42vw;
   display: block;
 }
@@ -130,7 +132,7 @@ p {
 .section {
   width: min(1140px, calc(100% - 2.4rem));
   margin: 0 auto;
-  padding: clamp(3.2rem, 6vw, 4.8rem) 0;
+  padding: clamp(3.2rem, 6vw, 4.8rem) 0 0;
 }
 
 .eyebrow {
@@ -149,6 +151,7 @@ p {
 
 .hero {
   padding-top: clamp(4.2rem, 8vw, 5.5rem);
+  padding-bottom: clamp(3.2rem, 6vw, 4.8rem);
 }
 
 .hero-shell {
@@ -159,8 +162,8 @@ p {
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  max-width: 12ch;
+  font-size: clamp(1.5rem, 6vw, 3.5rem);
+  max-width: 15ch;
   letter-spacing: -0.02em;
   text-shadow: 0 0 24px rgba(164, 189, 234, 0.18);
 }
@@ -169,13 +172,6 @@ p {
   max-width: 62ch;
   color: var(--muted);
   margin-top: 1rem;
-}
-
-.hero-actions {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 0.7rem;
-  flex-wrap: wrap;
 }
 
 .hero-panel {
@@ -246,12 +242,6 @@ p {
   margin-bottom: 0.7rem;
 }
 
-.metric-icon-compact {
-  width: 38px;
-  height: 38px;
-  margin-bottom: 0.55rem;
-}
-
 .hero-panel-stats h3 {
   color: var(--muted);
   font-size: 0.75rem;
@@ -260,35 +250,6 @@ p {
 .hero-panel-stats p {
   font-size: 1.22rem;
   font-weight: 800;
-}
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 800;
-  border-radius: 12px;
-  padding: 0.72rem 1.2rem;
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: linear-gradient(120deg, var(--accent), var(--accent-2));
-  color: #0a1736;
-  box-shadow: 0 0 18px rgba(168, 192, 237, 0.2), 0 10px 28px rgba(65, 90, 143, 0.22);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.09);
-  color: var(--text);
-  border: 1px solid var(--line);
-}
-
-.btn-secondary:hover {
-  border-color: rgba(186, 207, 247, 0.72);
 }
 
 .hero-metrics {
@@ -301,9 +262,14 @@ p {
 .logo-strip {
   margin-top: -0.8rem;
   padding-top: 0;
+  padding-bottom: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 0.6rem;
+}
+
+#about {
+  padding-bottom: 0;
 }
 
 .logo-strip span {
@@ -324,8 +290,7 @@ p {
 .steps article,
 .grid-4 article,
 .review-stats article,
-.testimonials article,
-.badge-card {
+.testimonials article {
   background: var(--panel-gradient);
   border: 1px solid var(--panel-border);
   border-radius: 16px;
@@ -336,19 +301,14 @@ p {
   box-shadow: var(--panel-shadow);
 }
 
-.badge-card {
-  display: grid;
-  gap: 0.85rem;
-  height: auto;
-  align-self: start;
+.hero-metrics article {
+  align-items: center;
+  text-align: center;
 }
 
-.badge-card > * {
-  margin: 0;
-}
-
-.badge-card .btn {
-  justify-self: start;
+.hero-metrics .metric-icon {
+  width: 60px;
+  height: 60px;
 }
 
 .hero-metrics h3 {
@@ -361,61 +321,14 @@ p {
   font-weight: 800;
 }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 1.4rem;
-  align-items: start;
-}
-
-.two-col h2,
 .section > h2 {
   max-width: 20ch;
   margin-bottom: 0.9rem;
 }
-.about-media,
-.choose-media {
-  margin: 0 0 1rem;
-  border-radius: 18px;
-  border: 1px solid var(--panel-border);
-  overflow: hidden;
-  background: var(--panel-gradient);
-  box-shadow: var(--panel-shadow);
-}
-
-.about-media img,
-.choose-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.split-list {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.split-list ul,
 .footer-grid ul {
   margin: 0;
   padding-left: 1.15rem;
   color: var(--muted);
-}
-
-.split-list ul {
-  display: block;
-  list-style-position: outside;
-}
-
-.split-list li {
-  margin: 0;
-  padding: 0;
-}
-
-.split-list li + li {
-  margin-top: 0.25rem;
 }
 
 .grid-4 {
@@ -492,78 +405,6 @@ p {
   margin-bottom: 0.6rem;
 }
 
-.accordion {
-  display: grid;
-  gap: 0.8rem;
-}
-
-details {
-  background: var(--panel-gradient);
-  border: 1px solid var(--panel-border);
-  border-radius: 14px;
-  padding: 0.8rem;
-  box-shadow: var(--panel-shadow);
-}
-
-summary {
-  cursor: pointer;
-  font-weight: 700;
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-details p {
-  margin-top: 0.6rem;
-  color: var(--muted);
-}
-
-.cta {
-  text-align: center;
-  padding: 2.2rem 1.4rem;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: linear-gradient(130deg, rgba(109, 134, 184, 0.22), rgba(59, 79, 126, 0.24));
-  box-shadow: 0 0 0 1px rgba(166, 188, 231, 0.12), 0 14px 34px rgba(8, 17, 41, 0.4);
-}
-
-.cta > h2,
-.cta > p {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta > h2 {
-  max-width: none;
-  white-space: nowrap;
-  margin-bottom: 0.8rem;
-}
-
-.cta > p {
-  max-width: 62ch;
-  margin-bottom: 1.2rem;
-}
-
-.cta .btn {
-  margin-top: 0.2rem;
-}
-
-.market-widget {
-  border: 1px solid var(--panel-border);
-  border-radius: 16px;
-  overflow: hidden;
-  min-height: 540px;
-  background: var(--panel-gradient);
-  box-shadow: var(--panel-shadow);
-}
-
-#tradingview_chart {
-  width: 100%;
-  height: 540px;
-}
-
 .review-stats,
 .testimonials,
 .footer-grid {
@@ -592,13 +433,42 @@ details p {
 }
 
 .footer-grid {
-  grid-template-columns: 1.2fr 1fr 1fr 1fr;
-  column-gap: 1rem;
+  grid-template-columns: minmax(240px, 1.35fr) repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: stretch;
 }
+
+.footer-grid > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.footer-grid h3,
+.footer-grid h4,
+.footer-grid p {
+  margin: 0;
+}
+
+.footer-grid ul {
+  margin: 0.15rem 0 0;
+}
+
+.footer-grid li {
+  line-height: 1.45;
+}
+
 .footer-logo {
   width: 250px;
   max-width: 100%;
   margin-bottom: 0.4rem;
+}
+
+.footer-contact {
+  text-align: center;
 }
 
 .footer-bottom {
@@ -608,8 +478,13 @@ details p {
   color: var(--muted);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.6rem;
+}
+
+.footer-bottom p {
+  margin: 0;
 }
 
 .reveal {
@@ -629,7 +504,7 @@ details p {
   }
 
   .brand img {
-    width: clamp(180px, 45vw, 250px);
+    width: clamp(90px, 22.5vw, 125px);
     max-width: 100%;
   }
 
@@ -674,40 +549,8 @@ details p {
   .steps,
   .review-stats,
   .testimonials,
-  .footer-grid,
-  .two-col,
-  .split-list {
+  .footer-grid {
     grid-template-columns: 1fr;
-  }
-
-  .split-list {
-    gap: 0;
-  }
-
-  .split-list ul {
-    padding-left: 1rem;
-  }
-
-  .split-list li + li {
-    margin-top: 0.22rem;
-  }
-
-  .split-list ul + ul {
-    margin-top: 0;
-  }
-
-  .cta {
-    padding: 1.8rem 1rem;
-  }
-
-  .cta > h2 {
-    white-space: normal;
-  }
-
-  .market-widget,
-  #tradingview_chart {
-    min-height: 420px;
-    height: 420px;
   }
 
   .footer-bottom {
@@ -723,15 +566,6 @@ details p {
 
   .hero h1 {
     max-width: 100%;
-  }
-
-  .hero-actions {
-    gap: 0.55rem;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-    text-align: center;
   }
 
   .logo-strip {
