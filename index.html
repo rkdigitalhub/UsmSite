@@ -21,13 +21,13 @@
     </a>
     <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
     <nav class="site-nav" aria-label="Main navigation">
-      <a href="#top">Home</a>
-      <a href="#about">Who we are</a>
-      <a href="#services">Our Services</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact us</a>
-      <a class="login-btn" href="https://unispacemarket.netlify.app/" target="_blank" rel="noreferrer">Login</a>
+      <div class="nav-links">
+        <a href="#top">Home</a>
+        <a href="#contact">Contact us</a>
+      </div>
+      <div class="nav-cta">
+        <a class="login-btn" href="https://unispacemarket.netlify.app/" target="_blank" rel="noreferrer">Login</a>
+      </div>
     </nav>
   </header>
 
@@ -38,10 +38,6 @@
           <p class="eyebrow">Welcome to Unispace Market</p>
           <h1>Your Journey to Financial Freedom Starts Here</h1>
           <p class="hero-copy">Your journey to financial freedom starts here with Unispace Market (USM). Let our expert strategies and personalized guidance help you build lasting wealth and achieve your investment goals with confidence.</p>
-          <!-- <div class="hero-actions">
-            <a class="btn btn-primary" href="https://unispacemarket.netlify.app/" target="_blank" rel="noreferrer">Get Started</a>
-            <a class="btn btn-secondary" href="#services">View Services</a>
-          </div> -->
         </div>
         <aside class="hero-panel">
           <p class="hero-panel-title">Live Strategy Snapshot</p>
@@ -50,12 +46,10 @@
           </div>
           <div class="hero-panel-stats">
             <article>
-              <!-- <img class="metric-icon metric-icon-compact" src="assets/images/metric-roi.svg" alt="Average ROI icon" /> -->
               <h3>Average ROI Achievement</h3>
               <p>77%</p>
             </article>
             <article>
-              <!-- <img class="metric-icon metric-icon-compact" src="assets/images/metric-market.svg" alt="Market beat rate icon" /> -->
               <h3>Market Beat Rate</h3>
               <p>68%</p>
             </article>
@@ -93,35 +87,6 @@
       <span>Trading Execution</span>
       <span>Market Insights</span>
     </section>
-
-    <!-- <section class="section two-col reveal" id="about">
-      <div>
-        <figure class="about-media image-slot">
-          <img src="assets/images/advisory.png" alt="Professional advisory team" />
-        </figure>
-        <p class="eyebrow">Who we are</p>
-        <h2>Explore Our Full Range of Investment Services Today.</h2>
-        <p>Unispace Market (USM) is a international brokerage providing secure, transparent, and high-speed market access to Forex, CFDs, Stocks, Options, and more-all from a single, powerful trading account. Whether you are an active trader or long-term investor, we offer institutional-grade technology and expert support to help you succeed in today&apos;s markets.</p>
-        <div class="split-list">
-          <ul>
-            <li>Portfolio Management</li>
-            <li>Financial Planning</li>
-            <li>Retirement Solutions</li>
-            <li>Wealth Advisory</li>
-            <li>Risk Assessment</li>
-            <li>Trading Consulting</li>
-            <li>Asset Allocation</li>
-            <li>Market Insights</li>
-          </ul>
-        </div>
-      </div>
-      <aside class="badge-card">
-        <p class="chip">Professional Expert</p>
-        <h3>Join USM and Invest with Confidence.</h3>
-        <p>Join USM and take control of your financial journey. Invest with confidence, backed by experience.</p>
-        <a class="btn btn-secondary" href="https://unispacemarket.netlify.app/" target="_blank" rel="noreferrer">Get Started</a>
-      </aside>
-    </section> -->
     <section class="section reveal" id="about">
       <p class="eyebrow">Who we are</p>
       <div class="grid-4">
@@ -218,50 +183,6 @@
       </div>
     </section>
 
-    <!-- <section class="section two-col reveal">
-      <div>
-        <p class="eyebrow">Why Choose Us</p>
-        <h2>Building Financial Futures with Expertise and Integrity.</h2>
-        <p>Building financial futures with expertise and integrity. Guiding your investments with trusted strategies, and empowering growth every step of the way.</p>
-        <figure class="choose-media image-slot">
-          <img src="assets/images/advisory2.jpg" alt="Professional advisory services" />
-        </figure>
-      </div>
-      <div class="accordion" id="accordion">
-        <details open>
-          <summary>Personalized Investment Strategies</summary>
-          <p>Personalized Investment Strategies are customized financial plans tailored to your individual goals, risk tolerance, and investment horizon. Instead of a one-size-fits-all approach, our experts analyze your unique situation and design strategies that align with your objectives, whether it is wealth growth, retirement planning, or income generation. This ensures that your investments work efficiently toward achieving your financial aspirations.</p>
-        </details>
-        <details>
-          <summary>Advanced Trading Technology</summary>
-          <p>Leverage cutting-edge trading technology for faster, smarter, and more efficient market execution, ensuring you stay ahead in every trade.</p>
-        </details>
-        <details>
-          <summary>Comprehensive Wealth Solutions</summary>
-          <p>Providing complete financial solutions to grow, protect, and manage your wealth with expert guidance and tailored strategies.</p>
-        </details>
-        <details>
-          <summary>Continuous Performance Tracking</summary>
-          <p>Experience uninterrupted performance monitoring to maximize growth and minimize risks.</p>
-        </details>
-      </div>
-    </section> -->
-
-    <!-- <section class="section cta reveal">
-      <h2>Navigate Markets Confidently with Our Proven Strategies.</h2>
-      <p>Trade with confidence using our proven strategies. Turning market opportunities into reliable growth for you.</p>
-      <a class="btn btn-primary" href="https://unispacemarket.netlify.app/" target="_blank" rel="noreferrer">Get Started</a>
-    </section> -->
-
-    <!-- <section class="section reveal">
-      <p class="eyebrow">Live Market</p>
-      <div class="market-widget">
-        <div class="tradingview-widget-container">
-          <div id="tradingview_chart"></div>
-        </div>
-      </div>
-    </section> -->
-
     <section class="section reveal" id="reviews">
       <p class="eyebrow">Client Feedback &amp; Reviews</p>
       <h2>Success Begins with Smart Financial Management.</h2>
@@ -302,9 +223,6 @@
                 <p class="footer-contact"><strong>Free Consultations</strong><br />(123) 4000-2424</p>
 
       </div>
-      <!-- <div>
-        <p><strong>Free Consultations</strong><br />(123) 4000-2424</p>
-      </div> -->
       <div>
         <h4>Services</h4>
         <ul>
@@ -339,8 +257,6 @@
       <p>Copyright © 2025 Unispace Market, All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- <script src="https://s3.tradingview.com/tv.js"></script> -->
   <script src="script.js"></script>
 </body>
 </html>
