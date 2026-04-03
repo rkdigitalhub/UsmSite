@@ -22,20 +22,27 @@ if (menuToggle && nav) {
 if (carousel) {
   const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
   const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+  const swipeThresholdPx = 50;
   const transitionDurationMs = 700;
   let activeIndex = 0;
   let autoplayId;
   let exitTimeoutId;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let isTrackingSwipe = false;
 
-  const setActiveSlide = (nextIndex) => {
+  const setActiveSlide = (nextIndex, direction = 'next') => {
     if (nextIndex === activeIndex) {
       return;
     }
 
-    const previousSlide = slides[activeIndex];
+    const previousIndex = activeIndex;
+    const previousSlide = slides[previousIndex];
     const nextSlide = slides[nextIndex];
 
     clearTimeout(exitTimeoutId);
+    carousel.classList.toggle('is-direction-prev', direction === 'prev');
+    carousel.classList.toggle('is-direction-next', direction !== 'prev');
 
     if (previousSlide) {
       previousSlide.classList.remove('is-active');
@@ -51,7 +58,11 @@ if (carousel) {
 
     exitTimeoutId = setTimeout(() => {
       slides.forEach((slide, index) => {
-        if (index !== activeIndex) {
+        if (index !== activeIndex && index !== previousIndex) {
+          slide.classList.remove('is-exiting');
+        }
+
+        if (index === previousIndex) {
           slide.classList.remove('is-exiting');
         }
       });
@@ -78,7 +89,7 @@ if (carousel) {
     stopAutoplay();
     autoplayId = setInterval(() => {
       const nextIndex = (activeIndex + 1) % slides.length;
-      setActiveSlide(nextIndex);
+      setActiveSlide(nextIndex, 'next');
     }, 3000);
   };
 
@@ -90,7 +101,8 @@ if (carousel) {
     dot.addEventListener('click', () => {
       const nextIndex = Number(dot.dataset.target);
       if (!Number.isNaN(nextIndex)) {
-        setActiveSlide(nextIndex);
+        const direction = nextIndex > activeIndex ? 'next' : 'prev';
+        setActiveSlide(nextIndex, direction);
         startAutoplay();
       }
     });
@@ -102,14 +114,56 @@ if (carousel) {
 
       const direction = event.key === 'ArrowRight' ? 1 : -1;
       const nextIndex = (activeIndex + direction + dots.length) % dots.length;
-      setActiveSlide(nextIndex);
+      setActiveSlide(nextIndex, direction === 1 ? 'next' : 'prev');
       dots[nextIndex].focus();
       startAutoplay();
     });
   });
 
+  carousel.addEventListener('touchstart', (event) => {
+    if (event.touches.length !== 1) {
+      isTrackingSwipe = false;
+      return;
+    }
+
+    const touch = event.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    isTrackingSwipe = true;
+    stopAutoplay();
+  }, { passive: true });
+
+  carousel.addEventListener('touchend', (event) => {
+    if (!isTrackingSwipe || event.changedTouches.length !== 1) {
+      startAutoplay();
+      return;
+    }
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    isTrackingSwipe = false;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) >= swipeThresholdPx) {
+      if (deltaX < 0) {
+        setActiveSlide((activeIndex + 1) % slides.length, 'next');
+      } else {
+        setActiveSlide((activeIndex - 1 + slides.length) % slides.length, 'prev');
+      }
+    }
+
+    startAutoplay();
+  }, { passive: true });
+
+  carousel.addEventListener('touchcancel', () => {
+    isTrackingSwipe = false;
+    startAutoplay();
+  }, { passive: true });
+
   carousel.addEventListener('mouseenter', stopAutoplay);
   carousel.addEventListener('mouseleave', startAutoplay);
+  carousel.classList.add('is-direction-next');
   startAutoplay();
 }
 

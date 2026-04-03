@@ -157,6 +157,7 @@ p {
   position: relative;
   display: grid;
   width: 100%;
+  touch-action: pan-y;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid var(--panel-border);
@@ -187,6 +188,18 @@ p {
   opacity: 0;
   transform: translateX(-48px);
   z-index: 1;
+}
+
+.carousel-viewport.is-direction-prev .carousel-slide {
+  transform: translateX(-48px);
+}
+
+.carousel-viewport.is-direction-prev .carousel-slide.is-active {
+  transform: translateX(0);
+}
+
+.carousel-viewport.is-direction-prev .carousel-slide.is-exiting {
+  transform: translateX(48px);
 }
 
 .carousel-slide img {
