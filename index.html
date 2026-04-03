@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unispace Market </title>
+  <title>Unispace Market</title>
   <meta name="description" content="Your journey to financial freedom starts here with Unispace Market (USM)." />
   <link rel="icon" type="image/png" href="assets/images/usm_logo1.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,8 +19,8 @@
     <a class="brand" href="#top">
       <img src="assets/images/usm_final.png" alt="Unispace Market logo" />
     </a>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
-    <nav class="site-nav" aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-label="Open main menu" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
       <div class="nav-links">
         <a href="#top">Home</a>
         <a href="#contact">Contact us</a>
@@ -30,6 +30,33 @@
       </div>
     </nav>
   </header>
+
+  <section class="banner-carousel" aria-label="Featured highlights">
+    <div class="carousel-viewport" id="banner-carousel" aria-live="polite">
+      <div class="carousel-slide is-active" data-slide="0" id="banner-slide-1" role="tabpanel" aria-labelledby="banner-tab-1" aria-hidden="false">
+        <img src="assets/images/banner1.png" alt="Investment opportunities banner" />
+      </div>
+      <div class="carousel-slide" data-slide="1" id="banner-slide-2" role="tabpanel" aria-labelledby="banner-tab-2" aria-hidden="true">
+        <img src="assets/images/banner2.png" alt="Market strategy banner" />
+      </div>
+      <div class="carousel-slide" data-slide="2" id="banner-slide-3" role="tabpanel" aria-labelledby="banner-tab-3" aria-hidden="true">
+        <img src="assets/images/banner3.png" alt="Portfolio growth banner" />
+      </div>
+      <div class="carousel-slide" data-slide="3" id="banner-slide-4" role="tabpanel" aria-labelledby="banner-tab-4" aria-hidden="true">
+        <img src="assets/images/banner4.png" alt="Global trading banner" />
+      </div>
+      <div class="carousel-slide" data-slide="4" id="banner-slide-5" role="tabpanel" aria-labelledby="banner-tab-5" aria-hidden="true">
+        <img src="assets/images/banner5.png" alt="Advanced market analysis banner" />
+      </div>
+    </div>
+    <div class="carousel-dots" role="tablist" aria-label="Banner slides">
+      <button class="carousel-dot is-active" type="button" role="tab" data-target="0" aria-label="Go to slide 1" aria-selected="true" aria-controls="banner-slide-1" id="banner-tab-1"></button>
+      <button class="carousel-dot" type="button" role="tab" data-target="1" aria-label="Go to slide 2" aria-selected="false" aria-controls="banner-slide-2" id="banner-tab-2" tabindex="-1"></button>
+      <button class="carousel-dot" type="button" role="tab" data-target="2" aria-label="Go to slide 3" aria-selected="false" aria-controls="banner-slide-3" id="banner-tab-3" tabindex="-1"></button>
+      <button class="carousel-dot" type="button" role="tab" data-target="3" aria-label="Go to slide 4" aria-selected="false" aria-controls="banner-slide-4" id="banner-tab-4" tabindex="-1"></button>
+      <button class="carousel-dot" type="button" role="tab" data-target="4" aria-label="Go to slide 5" aria-selected="false" aria-controls="banner-slide-5" id="banner-tab-5" tabindex="-1"></button>
+    </div>
+  </section>
 
   <main>
     <section class="hero section reveal">
@@ -254,7 +281,7 @@
     </div>
     <div class="footer-bottom">
       <p>Facebook | Instagram | Twitter | Youtube</p>
-      <p>Copyright © 2025 Unispace Market, All rights reserved.</p>
+      <p>Copyright 2025 Unispace Market. All rights reserved.</p>
     </div>
   </footer>
   <script src="script.js"></script>
